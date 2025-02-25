@@ -51,7 +51,7 @@ body{
     bottom: -80px;
 }
 form{
-    height: 600px;
+    height: 680px;
     width: 450px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -131,6 +131,14 @@ button{
 .social i{
   margin-right: 4px;
 }
+.messages {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(240, 82, 82, 0.6);
+    color: white;
+    text-align: center;
+}
 
     </style>
 </head>
@@ -142,7 +150,16 @@ button{
     <form action='' method = 'POST'>
         {% csrf_token %} 
         <h3>Signup Here</h3>
-
+        
+        {% if messages %}
+        
+        {% for message in messages %}
+        <div class="messages">{{message}}</div>
+            
+        {% endfor %}
+            
+        {% endif %}
+            
         <label for="username">Username</label>
         <input type="text" placeholder="Username" name="username" id="username" required>
 
@@ -156,7 +173,7 @@ button{
         <label for="password2">Confrom Password</label>
         <input type="password" placeholder="Confrom Password" id="password2" name="password2" required>
         <button type="submit">Signup</button>
-        
+        <br><br>
         <a href="{% url 'login' %}" >i have already account</a>
     </form>
 </body>

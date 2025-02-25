@@ -139,7 +139,7 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form >
+    <form action="" method="POST">
         <h3>Login Here</h3>
         {% csrf_token %} 
         <label for="username">Username</label>
@@ -154,7 +154,7 @@ button{
           <div class="go"><i class="fab fa-google"></i>  Google</div>
           <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
         </div> -->
-        <a href="" >Create a account</a>
+        <a href="{% url 'signup' %}" >Create a account</a>
     </form>
 </body>
 </html>

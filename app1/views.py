@@ -47,3 +47,10 @@ def SignUp(request):
 def Logout(request):
     logout(request)
     return redirect('login')
+
+def About(request):
+    
+    return render(request,'about.html')
+
+def Services(request):
+   return render(request,'services.html')
